@@ -1,0 +1,116 @@
+[
+    {
+        "id": "d158caa641d31bd9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c2a5ad9dcee690e7",
+        "type": "http in",
+        "z": "d158caa641d31bd9",
+        "name": "",
+        "url": "/timkiem",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "f84e747fd550ca61"
+            ]
+        ]
+    },
+    {
+        "id": "8acf537d03ba0f27",
+        "type": "MSSQL",
+        "z": "d158caa641d31bd9",
+        "mssqlCN": "3ae73cb89e020bfc",
+        "name": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "query": "",
+        "modeOpt": "queryMode",
+        "modeOptType": "query",
+        "queryOpt": "topic",
+        "queryOptType": "msg",
+        "paramsOpt": "params",
+        "paramsOptType": "msg",
+        "rows": "rows",
+        "rowsType": "msg",
+        "parseMustache": false,
+        "params": [],
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "4afc31bfc12df4f9"
+            ]
+        ]
+    },
+    {
+        "id": "f84e747fd550ca61",
+        "type": "function",
+        "z": "d158caa641d31bd9",
+        "name": "function 1",
+        "func": "const q = (msg.req?.query?.q ?? '').trim();\n\nmsg.topic = `\n  SELECT Id, HoTen, Lop\n  FROM BTVN02.dbo.SinhVien\n  WHERE HoTen COLLATE Vietnamese_CI_AI LIKE @p1\n     OR Lop  COLLATE Vietnamese_CI_AI LIKE @p2\n  ORDER BY Id;\n`;\n\nmsg.params = [\n  { name: 'p1', type: 'NVarChar', value: `%${q}%` },\n  { name: 'p2', type: 'NVarChar', value: `%${q}%` }\n];\n\nmsg.statusCode = 200;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 240,
+        "wires": [
+            [
+                "8acf537d03ba0f27"
+            ]
+        ]
+    },
+    {
+        "id": "4afc31bfc12df4f9",
+        "type": "http response",
+        "z": "d158caa641d31bd9",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        "x": 730,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3ae73cb89e020bfc",
+        "type": "MSSQL-CN",
+        "tdsVersion": "7_4",
+        "name": "",
+        "server": "DESKTOP-LPBA94I",
+        "port": "1433",
+        "encyption": false,
+        "trustServerCertificate": true,
+        "database": "BTVN02",
+        "useUTC": true,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false,
+        "enableArithAbort": true,
+        "readOnlyIntent": false
+    },
+    {
+        "id": "04200ebc975c7359",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-mssql-plus": "0.13.1"
+        }
+    }
+]
