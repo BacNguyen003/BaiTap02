@@ -52,6 +52,9 @@ node-red-contrib-mssql-plus
 node-red-contrib-moment
 node-red-contrib-cron-plus
 node-red-contrib-telegrambot
+- Tạo Tk trong node
+<img width="1828" height="976" alt="image" src="https://github.com/user-attachments/assets/cd5cfeb7-4513-4779-84a1-c8731f8e26c7" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/13602535-4897-47a1-ab76-abaf3e1c47d1" />
 <img width="1903" height="1068" alt="image" src="https://github.com/user-attachments/assets/633c9c2f-b37f-464a-9ea1-8e14b300d4f5" />
 
 ## 5️⃣ TẠO FLOW KẾT NỐI SQL SERVER
@@ -65,6 +68,16 @@ node-red-contrib-telegrambot
 - Truy cập: http://localhost:1880/timkiem?q=thi
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3ed9e978-99b6-46d2-b116-844f449de4e0" />
 
+## 6️⃣ GIAO DIỆN FRONT-END (index.html, css, js)
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f10f8b61-2703-43c6-9dfb-af1cca1b012f" />
+<img width="1863" height="996" alt="image" src="https://github.com/user-attachments/assets/2a67b620-31cb-45a4-91b8-d3bf8b91e247" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7d9b7c7a-0aad-4eaf-b0f8-391385ad0df8" />
+<img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/ac7d47dc-ed17-4cf9-b8c4-cae0440ecc6b" />
+
+## Kết Quả
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6a49152a-47a4-4b0e-b63c-941f79d3f698" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/25b5941a-a36c-40ed-817b-2aafe7e02c0e" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/69e4b14d-646a-46fe-ac20-07fe6c801a56" />
 
 
 
